@@ -1,3 +1,4 @@
 require_relative './archive'
 
-print archive
+  test = Archive.new
+  test.archive
