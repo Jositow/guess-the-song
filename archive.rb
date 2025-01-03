@@ -21,7 +21,8 @@ class Archive
         when 4
           break
         else
-          puts "what was that?"
+          puts "what was that?" 
+          puts
       end
     end
   end
@@ -36,6 +37,8 @@ class Archive
   end
   
   def list_songs
-    puts @songs
+    @songs.each.with_index(1) {|song, index|
+      puts "#{index} #{song[:song]}, #{song[:singer]}"
+    }
   end
 end
