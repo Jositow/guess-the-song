@@ -1,12 +1,14 @@
 require_relative "./archive.rb"
 
 class Song
-  def initialize(singer, new_song)
+attr_accessor :singer, :song
+
+  def initialize(song, singer)
     @singer = singer
-    @new_song = new_song
+    @song = song
   end
 
   def add
-    {@singer.to_sym => @new_song}
+    {song: @song, singer: @singer}
   end
 end
