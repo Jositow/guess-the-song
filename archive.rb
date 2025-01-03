@@ -9,7 +9,7 @@ class Archive
     loop do
       puts "1. Add a song"
       puts "2. List of songs"
-      puts "3. Guess the song"
+      puts "3. Delete a Song"
       puts "4. Exit"
       @answer = gets.chomp.to_i
       puts "\n"
@@ -18,10 +18,12 @@ class Archive
           add_song
         when 2
           list_songs
+        when 3
+          delete_song
         when 4
           break
         else
-          puts "what was that?" 
+          puts "Invalid input" 
           puts
       end
     end
@@ -37,8 +39,17 @@ class Archive
   end
   
   def list_songs
+    puts "LIST OF ALL SONGS"
+    puts
     @songs.each.with_index(1) {|song, index|
       puts "#{index} #{song[:song]}, #{song[:singer]}"
     }
+    puts
+  end
+
+  def delete_song
+    puts "Enter song to delete: "
+    song_to_remove = gets.chomp
+    @songs.delete_if {|x| x[:song] == song_to_remove}
   end
 end
