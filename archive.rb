@@ -1,3 +1,5 @@
+require_relative "./song.rb"
+
 class Archive
   def initialize
     @songs = {}
@@ -21,8 +23,9 @@ class Archive
     puts "Enter the singer"
     singer = gets.chomp 
 
-    @songs.store(singer.to_sym, new_song)
-    print @songs
+    x = Song.new(singer, new_song)
+    @songs = x.add
+    puts @songs
   end
 
 end
