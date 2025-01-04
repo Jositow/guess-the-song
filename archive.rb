@@ -1,4 +1,5 @@
-require_relative "./song.rb"
+require_relative "./song"
+require_relative "./guess_song"
 
 class Archive
   def initialize
@@ -10,7 +11,8 @@ class Archive
       puts "1. Add a song"
       puts "2. List of songs"
       puts "3. Delete a Song"
-      puts "4. Exit"
+      puts "4. Guess the song (Game)"
+      puts "5. Exit"
       @answer = gets.chomp.to_i
       puts "\n"
       case @answer
@@ -21,12 +23,21 @@ class Archive
         when 3
           delete_song
         when 4
+          new_game
+        when 5
           break
         else
           puts "Invalid input" 
           puts
       end
     end
+  end
+  
+  def new_game
+    random_song = @songs.sample
+    
+    @game = NewGame.new(random_song[:song])  
+    @game.play
   end
 
   def add_song
