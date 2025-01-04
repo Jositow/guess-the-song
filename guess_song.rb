@@ -5,12 +5,11 @@ class NewGame
 
 
   def initialize(song)
-    @song_to_guess = song
+    @song_to_guess = song.split("")
     @guessed_letters = []
   end
   
   def play
-    each_letter = @song_to_guess.split("")
     puts "WELCOME TO GUESS THE SONG"
    
     7.times do
@@ -18,7 +17,7 @@ class NewGame
       @current_letter = gets.chomp
       @guessed_letters << @current_letter
       
-      each_letter.each {|letter|
+      @song_to_guess.each {|letter|
         if letter == @current_letter
           puts letter
         end
