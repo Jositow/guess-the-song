@@ -1,19 +1,25 @@
 class NewGame
   attr_accessor :song
-  @guessed_letters = []
+  attr_accessor :guessed_letters
+  
+
 
   def initialize(song)
     @song_to_guess = song
-    
+    @guessed_letters = []
   end
   
   def play
     each_letter = @song_to_guess.split("")
     puts "WELCOME TO GUESS THE SONG"
-    puts
+   
+    3.times do
+      puts "Enter a letter"
+      @current_letter = gets.chomp
+      @guessed_letters << @current_letter
+    end
 
-    print each_letter
-    
+    puts guessed_letters
   end
 
 
