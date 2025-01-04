@@ -13,13 +13,18 @@ class NewGame
     each_letter = @song_to_guess.split("")
     puts "WELCOME TO GUESS THE SONG"
    
-    3.times do
+    7.times do
       puts "Enter a letter"
       @current_letter = gets.chomp
       @guessed_letters << @current_letter
+      
+      each_letter.each {|letter|
+        if letter == @current_letter
+          puts letter
+        end
+      }
     end
 
-    puts guessed_letters
   end
 
 
