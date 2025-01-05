@@ -36,7 +36,7 @@ class Archive
   def new_game
     random_song = @songs.sample
     
-    @game = NewGame.new(random_song[:song])  
+    @game = NewGame.new(random_song[:song], random_song[:singer])  
     @game.play
   end
 
