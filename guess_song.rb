@@ -1,3 +1,4 @@
+require "io/console"
 
 class NewGame
   attr_accessor :song
@@ -6,7 +7,7 @@ class NewGame
   attr_accessor :allowed_guesses
 
   def initialize(song, singer)
-    @song_to_guess = song.split("")
+    @song_to_guess = song.downcase.split("")
     @singer = singer
     @guessed_letters = []
     @allowed_guesses = 7
@@ -17,7 +18,7 @@ class NewGame
   def play
     system ('clear')
     puts "WELCOME TO GUESS THE SONG GAME"
-    puts "You have #{@allowed_guesses} chance to guess the song"
+    puts "You have #{@allowed_guesses} chances to guess the song"
     puts "Hint: the singer is #{@singer}!"
     puts 
     if @song_to_guess.include?(" ") == true
@@ -35,7 +36,7 @@ class NewGame
       puts "Guess this song => #{@word_holder}"
       loop do
         print "Enter a letter: "
-        @current_letter = gets.chomp
+        @current_letter = gets.chomp.downcase
         if @current_letter.match(/^[a-zA-Z]$/)
           if guessed_letters.include?(@current_letter)
             puts "Letter already guessed, try again please."
@@ -56,15 +57,21 @@ class NewGame
             puts
             puts "YOU WON!"
             puts "The song was #{@word_holder.capitalize}!"
-            puts "press enter to go back to main menu"
-            gets.chomp
+            puts "press any key to go back to main menu"
+            STDIN.getch
             break
           end
       elsif !@song_to_guess.include?(@current_letter)
-        print "Wrong guess"
+        puts "Wrong guess"
       end
-  
+      
       @allowed_guesses -=1
+      if @allowed_guesses == 0
+        puts
+        puts "Game over! You ran out of chances :("
+        print "Press any key to go back to main menu."
+        STDIN.getch
+      end
     end
   end
 end
