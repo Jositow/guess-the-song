@@ -5,15 +5,13 @@ class NewGame
   attr_accessor :guessed_letters
   attr_accessor :allowed_guesses
 
-  
-
-
   def initialize(song, singer)
     @song_to_guess = song.split("")
     @singer = singer
     @guessed_letters = []
     @allowed_guesses = 7
     @word_holder = "*" * @song_to_guess.length
+
   end
   
   def play
@@ -22,6 +20,13 @@ class NewGame
     puts "You have #{@allowed_guesses} chance to guess the song"
     puts "Hint: the singer is #{@singer}!"
     puts 
+    if @song_to_guess.include?(" ") == true
+      @song_to_guess.each_with_index {|a, index|
+        if a == " "
+          @word_holder[index] = " "
+        end
+      }
+    end
     while @allowed_guesses > 0
       puts 
       puts "Letters already guess => #{@guessed_letters.join(",")}"
@@ -44,14 +49,14 @@ class NewGame
       if @song_to_guess.include?(@current_letter)
           puts "You're right!" 
           
-          @song_to_guess.each_with_index {|i, index|
+          @song_to_guess.each_with_index {|_, index|
             @word_holder[index] = @song_to_guess[index] if @song_to_guess[index] == @current_letter
           }
           if @word_holder == @song_to_guess.join
             puts
             puts "YOU WON!"
             puts "The song was #{@word_holder.capitalize}!"
-            puts "press enter to continue"
+            puts "press enter to go back to main menu"
             gets.chomp
             break
           end

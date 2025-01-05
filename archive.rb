@@ -8,6 +8,7 @@ class Archive
 
   def archive
     loop do
+      puts
       puts "1. Add a song"
       puts "2. List of songs"
       puts "3. Delete a Song"
@@ -35,9 +36,12 @@ class Archive
   
   def new_game
     random_song = @songs.sample
-    
-    @game = NewGame.new(random_song[:song], random_song[:singer])  
-    @game.play
+    unless @songs.empty? == true
+      @game = NewGame.new(random_song[:song], random_song[:singer])  
+      @game.play
+    else
+      puts "Enter a song to play the game."
+    end
   end
 
   def add_song
