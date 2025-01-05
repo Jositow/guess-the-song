@@ -11,7 +11,7 @@ class Archive
       puts
       puts "1. Add a song"
       puts "2. List of songs"
-      puts "3. Delete a Song"
+      puts "3. Delete a song"
       puts "4. Guess the song (Game)"
       puts "5. Exit"
       puts
@@ -44,7 +44,7 @@ class Archive
     else
       puts "Enter a song to play the game!"
       puts
-      print "Press any key to go back to menu"
+      print "Press any key to go back to the menu"
       STDIN.getch
     end
   end
@@ -52,7 +52,7 @@ class Archive
   def add_song
     puts "Enter the song:"
     new_song = gets.chomp.downcase
-    puts "Enter the singer"
+    puts "Enter the singer:"
     singer = gets.chomp.downcase
     song = Song.new(new_song, singer)
     @songs << song.add
@@ -68,8 +68,10 @@ class Archive
   end
 
   def delete_song
+    @repeated_song = 0
     puts "Enter song to delete: "
     song_to_remove = gets.chomp.downcase
+
     @songs.delete_if {|x| x[:song] == song_to_remove}
     
   end

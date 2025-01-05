@@ -17,7 +17,7 @@ class NewGame
   
   def play
     system ('clear')
-    puts "WELCOME TO GUESS THE SONG GAME"
+    puts "WELCOME TO THE GUESS THE SONG GAME"
     puts "You have #{@allowed_guesses} chances to guess the song"
     puts "Hint: the singer is #{@singer}!"
     puts 
@@ -30,7 +30,7 @@ class NewGame
     end
     while @allowed_guesses > 0
       puts 
-      puts "Letters already guess => #{@guessed_letters.join(",")}"
+      puts "Letters already guessed => #{@guessed_letters.join(",")}"
       puts "#{@allowed_guesses} chances left"
       puts
       puts "Guess this song => #{@word_holder}"
@@ -42,7 +42,7 @@ class NewGame
             puts "Letter already guessed, try again please."
           else break
           end
-        else puts "invalid input"
+        else puts "Invalid input"
         end
       end
       @guessed_letters << @current_letter
@@ -56,8 +56,8 @@ class NewGame
           if @word_holder == @song_to_guess.join
             puts
             puts "YOU WON!"
-            puts "The song was #{@word_holder.capitalize}!"
-            puts "press any key to go back to main menu"
+            puts "The song is #{@word_holder.capitalize}!"
+            puts "press any key to go back to the main menu"
             STDIN.getch
             break
           end
@@ -69,7 +69,7 @@ class NewGame
       if @allowed_guesses == 0
         puts
         puts "Game over! You ran out of chances :("
-        print "Press any key to go back to main menu."
+        print "Press any key to go back to the main menu."
         STDIN.getch
       end
     end
