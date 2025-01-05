@@ -72,13 +72,21 @@ class Archive
     puts "Enter song to delete: "
     @song_to_remove = gets.chomp.downcase
 
-    @songs.each {|element|
-      @repeated_song +=1 if element[:song] == @song_to_remove
-      #print "PASA"
-      #puts "aqui element #{element[:song]} y aqui #{@song_to_remove}"
-     }
+    @songs.each {|element|@repeated_song +=1 if element[:song] == @song_to_remove}
+   
     if @repeated_song > 1
-      puts "the song has a duplicate"
+      puts "The song has a duplicate!!"
+      puts
+      @songs.each {|element| 
+        if element[:song] == @song_to_remove
+          puts "#{element[:song]}, #{element[:singer]}"
+        end
+      }
+      puts
+      print "Please enter the SINGER for the song you want to remove:"
+      @song_by_singer = gets.chomp.downcase
+      @songs.delete_if {|x| x[:singer] == @song_by_singer}
+
     else
       @songs.delete_if {|x| x[:song] == @song_to_remove}
     end
