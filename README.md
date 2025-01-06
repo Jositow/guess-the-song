@@ -4,21 +4,21 @@
 
 ### Start by selecting your option, you have to **add a song first:**
 
-  Main menu:
-  
-  1. Add a song
-  2. List of songs
-  3. Delete a song
-  4. Guess the song (Game)
-  5. Exit
+Main menu:
+
+1. Add a song
+2. List of songs
+3. Delete a song
+4. Guess the song (Game)
+5. Exit
 
 
 ### After you add a song, you can review **a list of them:**
 
   LIST OF ALL SONGS
 
-  1 Candy, Rosalia
-  2 Gato de noche, Bad bunny
+  1. Candy, Rosalia
+  2. Gato de noche, Bad bunny
 
 ### Once you've added at least one song, you'll be able **to play the game:**
 
