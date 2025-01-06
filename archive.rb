@@ -75,7 +75,7 @@ class Archive
     @songs.each {|element|@repeated_song +=1 if element[:song] == @song_to_remove}
    
     if @repeated_song > 1
-      puts "The song has a duplicate!!"
+      puts "This song has a duplicate!!"
       puts
       @songs.each {|element| 
         if element[:song] == @song_to_remove
@@ -86,7 +86,13 @@ class Archive
       print "Please enter the SINGER for the song you want to remove:"
       @song_by_singer = gets.chomp.downcase
       @songs.each {|element|
-            @songs.delete_if {|element| element[:singer] == @song_by_singer}
+            if element[:song] == @song_to_remove && element[:singer] == @song_by_singer 
+              @songs.delete_if {|x| x[:singer] == @song_by_singer}
+            else 
+              puts "Singer not found. Try again!"
+              break
+            end
+            #@songs.delete_if {element[:singer] == @song_by_singer}
 
       }
     else
