@@ -8,6 +8,7 @@ class Archive
 
   def archive
     loop do
+      puts "MAIN MENU:"
       puts
       puts "1. Add a song"
       puts "2. List of songs"
