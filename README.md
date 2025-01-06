@@ -22,6 +22,7 @@ Main menu:
 
 ### Once you've added at least one song, you'll be able **to play the game:**
 
+
 WELCOME TO THE GUESS THE SONG GAME
 
 You have 7 chances to guess the song
@@ -35,16 +36,23 @@ Letters already guessed =>
 Guess this song => *****
 Enter a letter: 
 
+
 ### If you guess the song you'll see a message that you won:
+
   
   YOU WON!
+
   The song is Candy!
+  
   press any key to go back to the main menu
 
 ### If you dont guess the song, you'll see a game over message and the name of the song would be revealed:
 
+
   Game over! You ran out of chances :(
+
   The song was Gato de noche
+  
   Press any key to go back to the main menu.
 
 ### In any case, you'll be able to go back to the main menu and keep adding songs. 
