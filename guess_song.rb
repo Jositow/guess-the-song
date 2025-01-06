@@ -69,6 +69,7 @@ class NewGame
       if @allowed_guesses == 0
         puts
         puts "Game over! You ran out of chances :("
+        puts "The song was #{@song_to_guess.join.capitalize}"
         print "Press any key to go back to the main menu."
         STDIN.getch
       end
