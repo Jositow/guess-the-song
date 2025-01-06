@@ -22,16 +22,16 @@ Main menu:
 
 ### Once you've added at least one song, you'll be able **to play the game:**
 
-  WELCOME TO THE GUESS THE SONG GAME
-  You have 7 chances to guess the song
-  Hint: the singer is rosalia!
-  
-  
-  Letters already guessed => 
-  7 chances left
-  
-  Guess this song => *****
-  Enter a letter: 
+WELCOME TO THE GUESS THE SONG GAME
+You have 7 chances to guess the song
+Hint: the singer is rosalia!
+
+
+Letters already guessed => 
+7 chances left
+
+Guess this song => *****
+Enter a letter: 
 
 ### If you guess the song you'll see a message that you won:
   
