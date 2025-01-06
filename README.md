@@ -23,7 +23,9 @@ Main menu:
 ### Once you've added at least one song, you'll be able **to play the game:**
 
 WELCOME TO THE GUESS THE SONG GAME
+
 You have 7 chances to guess the song
+
 Hint: the singer is rosalia!
 
 
