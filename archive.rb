@@ -85,10 +85,13 @@ class Archive
       puts
       print "Please enter the SINGER for the song you want to remove:"
       @song_by_singer = gets.chomp.downcase
-      @songs.delete_if {|x| x[:singer] == @song_by_singer}
-
-    else
-      @songs.delete_if {|x| x[:song] == @song_to_remove}
+      
+      @songs.each {|element|
+        if element[:singer] == @song_by_singer
+          @songs.delete (element[:singer])
+        end
+      }
+      #@songs.delete_if {|x| x[:song] == @song_to_remove}
     end
   end
 end
