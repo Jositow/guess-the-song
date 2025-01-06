@@ -1,4 +1,4 @@
-require_relative "./archive.rb"
+require "./archive.rb"
 
 class Song
 attr_accessor :singer, :song

@@ -1,5 +1,5 @@
-require_relative "./song"
-require_relative "./guess_song"
+require "./song"
+require "./guess_song"
 
 class Archive
   def initialize

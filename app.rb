@@ -1,4 +1,4 @@
-require_relative './archive'
+require './archive'
 
   test = Archive.new
   test.archive
