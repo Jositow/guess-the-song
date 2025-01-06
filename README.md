@@ -34,6 +34,7 @@ Letters already guessed =>
 7 chances left
 
 Guess this song => *****
+
 Enter a letter: 
 
 
